@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,900;1,300;1,400&family=Parisienne&display=swap');
+
+:root {
+  --blanco: #fffefa;
+  --dorado: #ffcf40;
+  --magenta: #ee82ee;
+  --turquesa: #40e0e0;
+  --cursiva: 'Parisienne', 'Brush Script MT', cursive;
+  --textos: 'Merriweather', Georgia, serif;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--blanco);
+}
+
+::selection {
+  background-color: #40e0e0;
+  color: #130808;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--cursiva);
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: var(--textos);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fuenteNegrita {
+  font-weight: 900;
+}
+
+.fuenteDelgada {
+  font-weight: 300;
+}
+
+// Puede ser para los pesos 300 y 400
+.fuenteItalica {
+  font-style: italic;
+}
+
+.textoDorado {
+  color: var(--dorado);
+}
+
+.textoTurquesa {
+  color: var(--turquesa);
+}
+
+.textoMagenta {
+  color: var(--magenta);
+}
+
+.tarjeta {
+  position: absolute;
+  width: 90%;
+  max-width: 550px;
+  height: 340px;
+  background-color: #e0c6d0;
+  color: var(--blanco);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border: solid 2px var(--dorado);
+  }
+
+  &::before {
+    left: -20px;
+    width: calc(100% + 40px);
+    height: 100%;
+  }
+
+  &::after {
+    top: -20px;
+    width: 100%;
+    height: calc(100% + 40px);
+  }
+}
