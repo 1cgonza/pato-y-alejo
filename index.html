@@ -33,8 +33,13 @@
     <!-- <meta name="twitter:image:alt" content="Texto que describe la imagen" /> -->
   </head>
   <body>
-    <video id="animacionBichosLindos" class="fondoVideo oculto" src="/pato-y-alejo_720p.mp4"></video>
-    <audio id="sol" src="/sol-de-mi-vida.m4a"></audio>
+    <video id="animacionBichosLindos" class="fondoVideo oculto" playsinline loop muted>
+      <source src="/pato-y-alejo_720p.mp4" type="video/mp4" />
+    </video>
+
+    <audio id="sol">
+      <source src="/sol-de-mi-vida.m4a" type="audio/mp4" />
+    </audio>
 
     <div id="tarjeta">
       <h2>Matrimonio de Pati y Alejo</h2>
