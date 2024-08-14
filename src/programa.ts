@@ -1,237 +1,47 @@
+import lluvia from './lluvia';
 import './scss/estilos.scss';
-import { tsParticles } from '@tsparticles/engine';
-import { loadConfettiPreset } from '@tsparticles/preset-confetti';
+const video = document.querySelector<HTMLVideoElement>('#animacionBichosLindos');
+const reproducir = document.querySelector<HTMLDivElement>('#reproducir');
+const audio = document.querySelector<HTMLAudioElement>('#sol');
 
-loadConfettiPreset(tsParticles);
-tsParticles.load({
-  id: 'fiesta',
-  options: {
-    fullScreen: {
-      zIndex: 1,
-    },
-    particles: {
-      color: {
-        value: ['#40e0e0', '#ffcf40'],
-      },
-      move: {
-        direction: 'bottom',
-        enable: true,
-        outModes: {
-          default: 'out',
-        },
-        size: true,
-        speed: {
-          min: 1,
-          max: 3,
-        },
-      },
-      number: {
-        value: 500,
-        density: {
-          enable: true,
-          // area: 800,
-        },
-      },
-      opacity: {
-        value: 1,
-        animation: {
-          enable: false,
-          startValue: 'max',
-          destroy: 'min',
-          speed: 0.3,
-          sync: true,
-        },
-      },
-      rotate: {
-        value: {
-          min: 0,
-          max: 360,
-        },
-        direction: 'random',
-        move: true,
-        animation: {
-          enable: true,
-          speed: 60,
-        },
-      },
-      tilt: {
-        direction: 'random',
-        enable: true,
-        move: true,
-        value: {
-          min: 0,
-          max: 360,
-        },
-        animation: {
-          enable: true,
-          speed: 60,
-        },
-      },
-      shape: {
-        type: ['circle', 'square'],
-        options: {},
-      },
-      size: {
-        value: {
-          min: 2,
-          max: 4,
-        },
-      },
-      roll: {
-        darken: {
-          enable: true,
-          value: 30,
-        },
-        enlighten: {
-          enable: true,
-          value: 30,
-        },
-        enable: true,
-        speed: {
-          min: 15,
-          max: 25,
-        },
-      },
-      wobble: {
-        distance: 30,
-        enable: true,
-        move: true,
-        speed: {
-          min: -15,
-          max: 15,
-        },
-      },
-    },
-  },
-});
+const entrada = document.getElementById('abreInvitacion') as HTMLDivElement;
+const tarjeta = document.getElementById('tarjeta') as HTMLDivElement;
+const mensaje1 = document.getElementById('mensaje1') as HTMLDivElement;
+const mensaje2 = document.getElementById('mensaje2') as HTMLDivElement;
+const mensaje3 = document.getElementById('mensaje3') as HTMLDivElement;
+const mensaje4 = document.getElementById('mensaje4') as HTMLDivElement;
+const mensaje5 = document.getElementById('mensaje5') as HTMLDivElement;
 
-// tsParticles.load({
-//   id: 'fiesta',
-//   options: {
-//     preset: 'confetti',
-//     particles: {
-//       color: { value: ['#40e0e0', '#ffcf40'] }, //['#faf9f6', '#ffcf40', '#ee82ee', '#40e0e0'] },
-//       // move: {
-//       //   direction: 'bottom',
-//       //   enable: true,
-//       //   outModes: {
-//       //     default: 'out',
-//       //   },
-//       //   size: true,
-//       //   speed: {
-//       //     min: 1,
-//       //     max: 3,
-//       //   },
-//       // },
-//     },
-//     emitters: {
-//       life: {
-//         duration: 0,
-//       },
-//     },
-//   },
-// });
+const mensajes = [mensaje1, mensaje2, mensaje3, mensaje4, mensaje5];
 
-// tsParticles.load({
-//   id: 'tsparticles',
-//   options: {
-//     fullScreen: {
-//       zIndex: 1,
-//     },
-//     particles: {
-//       color: {
-//         value: ['#FFFFFF', '#FFd700'],
-//       },
-//       move: {
-//         direction: 'bottom',
-//         enable: true,
-//         outModes: {
-//           default: 'out',
-//         },
-//         size: true,
-//         speed: {
-//           min: 1,
-//           max: 3,
-//         },
-//       },
-//       number: {
-//         value: 500,
-//         density: {
-//           enable: true,
-//           area: 800,
-//         },
-//       },
-//       opacity: {
-//         value: 1,
-//         animation: {
-//           enable: false,
-//           startValue: 'max',
-//           destroy: 'min',
-//           speed: 0.3,
-//           sync: true,
-//         },
-//       },
-//       rotate: {
-//         value: {
-//           min: 0,
-//           max: 360,
-//         },
-//         direction: 'random',
-//         move: true,
-//         animation: {
-//           enable: true,
-//           speed: 60,
-//         },
-//       },
-//       tilt: {
-//         direction: 'random',
-//         enable: true,
-//         move: true,
-//         value: {
-//           min: 0,
-//           max: 360,
-//         },
-//         animation: {
-//           enable: true,
-//           speed: 60,
-//         },
-//       },
-//       shape: {
-//         type: ['circle', 'square'],
-//         options: {},
-//       },
-//       size: {
-//         value: {
-//           min: 2,
-//           max: 4,
-//         },
-//       },
-//       roll: {
-//         darken: {
-//           enable: true,
-//           value: 30,
-//         },
-//         enlighten: {
-//           enable: true,
-//           value: 30,
-//         },
-//         enable: true,
-//         speed: {
-//           min: 15,
-//           max: 25,
-//         },
-//       },
-//       wobble: {
-//         distance: 30,
-//         enable: true,
-//         move: true,
-//         speed: {
-//           min: -15,
-//           max: 15,
-//         },
-//       },
-//     },
-//   },
-// });
+if (video && reproducir && audio) {
+  reproducir.onclick = () => {
+    if (entrada) entrada.classList.add('oculto');
 
-console.log('..:: 💜 Pato & Alejo 💜 ::..');
+    audio.loop = true;
+
+    audio.play();
+    mensajes[0].classList.add('visible');
+    let viendoMensaje = 0;
+    let reproduciendoVideo = false;
+
+    setInterval(() => {
+      if (!reproduciendoVideo) {
+        video.classList.remove('oculto');
+        video.loop = true;
+        video.play();
+        reproduciendoVideo = true;
+      }
+
+      mensajes[viendoMensaje].classList.remove('visible');
+      viendoMensaje = (viendoMensaje + 1) % mensajes.length;
+      mensajes[viendoMensaje].classList.add('visible');
+    }, 5000);
+
+    tarjeta.classList.add('oculto');
+  };
+}
+
+lluvia();
+
+console.log('..:: 💜 Pati & Alejo 💜 ::..');

@@ -6,11 +6,9 @@
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/sitio.webmanifest" />
-    <!-- <link rel="canonical" href="https://enflujo.com" /> -->
 
-    <title>..:: EnFlujo ::..</title>
-    <!-- <meta name="description" content="Descripción del sitio...." /> -->
+    <title>💜 Pati & Alejo 💜</title>
+    <meta name="description" content="Descripción del sitio...." />
 
     <!-- OpenGraph -->
     <meta property="og:locale" content="es_CO" />
@@ -35,12 +33,33 @@
     <!-- <meta name="twitter:image:alt" content="Texto que describe la imagen" /> -->
   </head>
   <body>
-    <div class="tarjeta">
-      <h1>Nos vamos a casar</h1>
-      <p><span class="fuenteDelgada textoTurquesa">Lugar:</span> Matik Matik</p>
+    <video id="animacionBichosLindos" class="fondoVideo oculto" src="/pato-y-alejo_720p.mp4"></video>
+    <audio id="sol" src="/sol-de-mi-vida.m4a"></audio>
+
+    <div id="tarjeta">
+      <h2>Matrimonio de Pati y Alejo</h2>
+      <p>
+        <span class="fuenteDelgada textoDoradoOscuro">Lugar:</span>
+        <a href="https://g.co/kgs/zGcYHzG" target="_blank">Matik Matik</a>
+      </p>
+      <p><span class="fuenteDelgada textoDoradoOscuro">Dirección:</span> Carrera 11 #67-20</p>
+      <p><span class="fuenteDelgada textoDoradoOscuro">Protocolo de vestido:</span> Gala salsera.</p>
+      <p><span class="fuenteDelgada textoDoradoOscuro">Regalos:</span> Lluvia de sobres</p>
+
+      <div class="columnas">
+        <span id="reproducir"><span class="iconoReproducir"></span></span>
+        <span class="ver">Ver invitación</span>
+      </div>
     </div>
 
+    <div id="mensaje1" class="mensaje">Nos casamos y queremos invitarte a la ceremonia</div>
+    <div id="mensaje2" class="mensaje">Prepara tu mejor pinta salsera</div>
+    <div id="mensaje3" class="mensaje">Te esperamos en Matik Matik el 20 de Septiembre, 2024 a las 7:30pm</div>
+    <div id="mensaje4" class="mensaje">Lluvia de sobres de regalo</div>
+    <div id="mensaje5" class="mensaje">- Alejo y Pati</div>
+
     <div id="fiesta"></div>
+
     <script type="module" src="/src/programa.ts"></script>
   </body>
 </html>

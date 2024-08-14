@@ -24,11 +24,11 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--blanco);
+  background-color: #faefe1;
 }
 
 ::selection {
-  background-color: #40e0e0;
+  background-color: var(--dorado);
   color: #130808;
 }
 
@@ -47,12 +47,26 @@ body {
   font-style: normal;
 }
 
+a,
+a:link {
+  color: var(--blanco);
+  text-decoration: none;
+  font-style: italic;
+  border-bottom: 1px dotted;
+  transition: all 0.25s ease-out;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
 .fuenteNegrita {
   font-weight: 900;
 }
 
 .fuenteDelgada {
   font-weight: 300;
+  font-size: 0.85em;
 }
 
 // Puede ser para los pesos 300 y 400
@@ -64,6 +78,10 @@ body {
   color: var(--dorado);
 }
 
+.textoDoradoOscuro {
+  color: #867b57;
+}
+
 .textoTurquesa {
   color: var(--turquesa);
 }
@@ -72,22 +90,36 @@ body {
   color: var(--magenta);
 }
 
-.tarjeta {
+#tarjeta {
   position: absolute;
   width: 90%;
   max-width: 550px;
-  height: 340px;
-  background-color: #e0c6d0;
+  background-color: #f5c8d9;
   color: var(--blanco);
   left: 50%;
   transform: translate(-50%, -50%);
   top: 50%;
+  font-size: 1.3em;
+  padding-bottom: 40px;
+  z-index: 2;
+
+  h2 {
+    font-size: 1.8em;
+    text-align: center;
+    padding: 0px 20px;
+  }
+
+  p {
+    padding: 0px 20px;
+    font-size: 0.85em;
+  }
 
   &::before,
   &::after {
     content: '';
     position: absolute;
     border: solid 2px var(--dorado);
+    pointer-events: none;
   }
 
   &::before {
@@ -100,5 +132,99 @@ body {
     top: -20px;
     width: 100%;
     height: calc(100% + 40px);
+  }
+}
+
+.fondoVideo {
+  width: 100vw;
+  height: 100vh;
+  display: inline-block;
+  vertical-align: top;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.textos {
+  z-index: 1;
+  text-align: center;
+  position: relative;
+  font-size: 2em;
+}
+
+#reproducir {
+  width: 5rem;
+  height: 5rem;
+  background: var(--dorado);
+  border-radius: 50%;
+  transition: all 500ms ease-in-out;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.iconoReproducir {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 3px 24px rgba(black, 0.3);
+  transition: transform 350ms ease;
+  pointer-events: none;
+  left: 50%;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-35%, 80%);
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-left: 20px solid var(--blanco);
+    border-bottom: 15px solid transparent;
+  }
+}
+
+.oculto {
+  display: none;
+}
+
+#fiesta {
+  position: relative;
+  z-index: 9;
+  pointer-events: none;
+}
+
+.columnas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ver {
+  font-size: 0.7em;
+  margin-left: 8px;
+}
+
+.mensaje {
+  font-family: var(--cursiva);
+  font-size: 3em;
+  z-index: 9;
+  position: absolute;
+  padding: 1em 20px;
+  text-align: center;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  width: 100vw;
+  pointer-events: none;
+
+  &.visible {
+    opacity: 1;
   }
 }
