@@ -79,7 +79,7 @@ a:link {
 }
 
 .textoDoradoOscuro {
-  color: #867b57;
+  color: #fff6d8;
 }
 
 .textoTurquesa {
@@ -94,7 +94,7 @@ a:link {
   position: absolute;
   width: 90%;
   max-width: 550px;
-  background-color: #c90e56;
+  background-color: #ad275b;
   color: var(--blanco);
   left: 50%;
   transform: translate(-50%, -50%);
@@ -157,7 +157,7 @@ a:link {
 #reproducir {
   width: 5rem;
   height: 5rem;
-  background: var(--dorado);
+  background: #23928a;
   border-radius: 50%;
   transition: all 500ms ease-in-out;
   cursor: pointer;
